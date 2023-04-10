@@ -1,0 +1,45 @@
+{
+  "ComponentUrl": "baseUrl",
+  "RelativeUrl": "/Users/{{id}}",
+  "HttpMethod": "Get",
+  "AutherizationCredentialsKey": "",
+  "RequestHeader": [
+    {
+      "id": 1,
+      "key": "Accept",
+      "value": "application/json"
+    },
+    {
+      "id": 2,
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "RequestBody": {},
+  "RequestVariable": [
+  ],
+  "Assertion": [
+    {
+      "id": 1,
+      "expression": "ResponseCode",
+      "function": "ShouldBe",
+      "expected": 200
+    },
+    {
+      "id": 2,
+      "expression": "ResponseBody[id]",
+      "function": "ShouldBe",
+      "expected": "{{id}}"
+    }
+  ],
+  "DependendtApiScripts": [
+    {
+      "id": 1,
+      "component": "Users",
+      "testid": "CNB-02@Create New Users",
+      "variable": "id",
+      "key": "ResponseBody[id]",
+      "seq": "1"
+    }
+  ]
+}

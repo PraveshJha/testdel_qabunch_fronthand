@@ -1,0 +1,52 @@
+{
+	"DefaultSelectedEnvironment": "QA",
+	"DefaultReportTrailCount": 50,
+	"DefaultSaveDaysToReport": 30,
+	"DefaultSaveDaysToDevelopment": 30,
+	"Environment": [
+		{
+			"id": 1,
+			"name": "QA"
+		},
+		{
+			"id": 2,
+			"name": "Dev"
+		}
+	],
+	"Url": {
+		"QA": [
+			{
+				"id": 1,
+				"name": "baseUrl",
+				"url": "https://fakerestapi.azurewebsites.net/api/v1"
+			}
+		],
+		"Dev": [
+			{
+				"id": 1,
+				"name": "baseUrl",
+				"url": "https://fakerestapi.azurewebsites.net/api/v1"
+			}
+		]
+	},
+	"HttpHeader": [
+		{
+			"id": 1,
+			"key": "Accept",
+			"value": "application/json"
+		},
+		{
+			"id": 2,
+			"key": "Content-Type",
+			"value": "application/json"
+		}
+	],
+	"Authorization": [
+		{
+			"id": 1,
+			"key": "baseApp",
+			"username": "testUser",
+			"password": "password"
+		}
+	]
+}

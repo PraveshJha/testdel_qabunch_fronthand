@@ -1,0 +1,42 @@
+{
+  "ComponentUrl": "baseUrl",
+  "RelativeUrl": "/Users",
+  "HttpMethod": "Post",
+  "AutherizationCredentialsKey": "",
+  "RequestHeader": [
+    {
+      "id": 1,
+      "key": "Accept",
+      "value": "application/json"
+    },
+    {
+      "id": 2,
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "RequestBody": {
+    "1": {
+      "id": 10,
+      "userName": "Pravesh",
+      "password": "password"
+    }
+  },
+  "RequestVariable": [
+    {
+      "id": 1,
+      "variable": "id",
+      "key": "RequestBody[id]"
+    }
+  ],
+  "Assertion": [
+    {
+      "id": 1,
+      "expression": "ResponseBody[id]",
+      "function": "ShouldBe",
+      "expected": "{{id}}"
+    }
+  ],
+  "DependendtApiScripts": [
+  ]
+}

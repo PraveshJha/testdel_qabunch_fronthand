@@ -1,0 +1,16 @@
+export var MockData = {
+    ResponseHeaderData:[{id:1,key:'content-type',value:'application/json'}],
+    AllComponentList:[],
+    AllTestId:[],
+    SelectedComponent:'',
+    IsErrorOnComponentName:false,
+    SelectedTestId:'',
+    IsErrorOnTestId:false,
+    TestName:'',
+    SelectedRowForResponseHeaderTable:'',
+    ResponseBody:{'MockedResponseBody':'Paste Mock Response Body here'},
+    IsDynamicDataButtonDisable:true,
+    SelectedRowFromDynamicDataTable:-1,
+    AllTestIdWithName:[],
+    IsMockedTestIdOnServer:false,
+};
