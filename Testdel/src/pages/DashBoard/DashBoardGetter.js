@@ -438,6 +438,7 @@ export class DashBoardGetter {
                     var failureData = await this.getTotalFailComponentCount(await allComponentFailedData);
                     var allModuleFailedWithUpdatedValue = await this.updateModuleFailComponent(await failureData);
                     var allXaxis = await DashBoardData.ModuleScriptCountXaxis;
+                    DashBoardData.FailedComponentInLastXResults =[];
                     for (let p = 0; p < await allXaxis.length; p++) {
                         var comName = await allXaxis[p];
                         try {
