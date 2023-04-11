@@ -297,7 +297,7 @@ class TestCasePagePage extends React.Component {
   addTestExpectedResults = async (event) => {
     var dataChoice = await event.target.value;
     if (await this.state.testCaseExpectedResults !== await dataChoice) {
-      dataChoice = await dataChoice.toString().trim();
+      dataChoice = await dataChoice.toString();
       TestCaseData.TestCaseExpectedResults = await dataChoice;
       this.setState({ testCaseExpectedResults: await dataChoice });
     }
