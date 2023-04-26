@@ -32,6 +32,7 @@ import PageLoader from 'react-fullpage-custom-loader'
 import { LoaderMessage } from '../../pages/LoaderMessage';
 import restAPI from '../../QAautoMATER/funcLib/restAPI';
 import GetData from '../../QAautoMATER/funcLib/getData';
+import helpFile from '../../help/Help.pdf'
 const bem = bn.create('header');
 
 class Header extends React.Component {
@@ -87,6 +88,10 @@ class Header extends React.Component {
 
   changePassword = async (event) => {
     this.setState({ changePasswordScreen: true })
+  };
+
+  openHelpFile = async (event) => {
+    await window.open(await helpFile, "_blank");
   };
 
   addCurrentPassword = async (event) => {
@@ -231,7 +236,7 @@ class Header extends React.Component {
     if (backendServiceLocation === 'remote') {
       backendApi = Config.remoteBackendAPI;
     }
-    var testBody ={};
+    var testBody = {};
     testBody['firstName'] = await userFirstName.trim();
     testBody['lastName'] = await userLastName.trim();
     this.setState({ isPageLoading: true })
@@ -264,11 +269,14 @@ class Header extends React.Component {
 
     return (
       <Navbar light expand className={bem.b('bg-white')}>
-        {this.state.isPageLoading && <PageLoader sentences={LoaderMessage} height='100%' color="black" />}
+        {this.state.isPageLoading && <PageLoader sentences={LoaderMessage} height='120%' color="black" />}
         <NotificationSystem ref={this.notificationSystem} />
         <Nav navbar className="mr-2">
           <Button outline onClick={this.handleSidebarControlButton}>
             <MdClearAll size={25} />
+          </Button>
+          <Button outline color='info' size="sm" onClick={this.openHelpFile.bind(this)}>
+            <small>Help</small>
           </Button>
         </Nav>
         <Nav navbar className={bem.e('nav-right')}>
@@ -366,7 +374,7 @@ class Header extends React.Component {
                     style={{ width: 'auto', height: 150 }}
                 />
                 </FormGroup> */}
-                <FormGroup row>
+              <FormGroup row>
                 <Label sm={5}>
                   First name*
                 </Label>
