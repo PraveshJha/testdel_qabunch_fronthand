@@ -24,4 +24,5 @@ export const Users = {
 	"lastName":'',
 	"image":'',
 	"expiresOn":'',
+	"isTestingURL":'',
 };
